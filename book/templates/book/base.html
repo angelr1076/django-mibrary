@@ -1,0 +1,101 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Static CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'book/css/styles.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="{% static 'book/images/logo.png' %}">
+    <title>{% block title %} Mibrary {% endblock %} </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                 <img src="{% static 'book/images/online-library.svg' %}" width="35" height="35" class="d-inline-block align-top">
+                <span>Mibrary</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false " aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   View / Add
+                </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'currentbooks' %}">All Books</a>
+                            <a class="dropdown-item" href="{% url 'wanttoreadbooks' %}">Want To Read</a>
+                            <a class="dropdown-item" href="{% url 'currentlyreading' %}">Currently Reading</a>
+                            <a class="dropdown-item" href="{% url 'read' %}">Read</a>
+                            <a class="dropdown-item" href="{% url 'createbook' %}">Add Book</a> {% if user.is_superuser %}
+                            <a class="dropdown-item" href="{% url 'addgenre' %}">Add Genre</a> {% endif %}
+                        </div>
+                </ul>
+                {% endif %}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% if user.is_authenticated %}
+                     {% if user.first_name and user.last_name %}
+                     Logged in as <b>{{ user.first_name }} {{ user.last_name }}</b>
+                     {% else %}
+                     Logged in as <b>{{ user.username|capfirst }}</b>
+                     {% endif %}
+                </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if user.profile.id %}
+                            <a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">View Profile</a> {% else %}
+                            <a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile</a> {% endif %}
+                            <a class="dropdown-item" href="{% url 'edit_settings' %} ">Edit Settings</a>
+                            <a class="dropdown-item" href="# " onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                            <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                                {% csrf_token %}
+                                <button id="signOutBtn" type="submit">Logout</button>
+                            </form>
+                        </div>
+                        {% else %} Login/Register
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'loginuser' %}">Login</a>
+                            <a class="dropdown-item" href="{% url 'signupuser' %}">Sign Up</a>
+                        </div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+        <div class="content">
+            <div class="container mt-5">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                            </button> {{ message }}
+                </div>
+            </div>
+
+            {% endfor %} {% block content %}{% endblock %}
+        </div>
+        <footer class="footer mt-3 mb-1">
+            <small>All svg images created by <a href="https://delesign.com/free-designs/graphics" target="_blank" title="delesign"><em>Delesign</em></a>. Navbar icon created by <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik"><em>Freepik</em></a> from <a href="https://www.flaticon.com/"  target="_blank" title="Flaticon"> www.flaticon.com</a>.</small>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+
+</html>

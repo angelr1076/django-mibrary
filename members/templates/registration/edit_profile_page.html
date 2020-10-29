@@ -1,0 +1,43 @@
+{% extends 'book/base.html' %} {% load static %} {% block title %} Edit Profile Page{% endblock %} {% block content %} {% if user.is_authenticated %} {% if user.id == profile.user.id %}
+<div class="row">
+    <div class="alert alert-warning" role="alert">
+        <h3 class="alert-heading">Edit Profile Page...</h3>
+    </div>
+</div>
+<br/>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            {% csrf_token %} {{ form.as_p }}
+            <button class="btn btn-info">Update Profile</button>
+            <button type="button" class="btn btn-outline-warning" onclick="$('#cancel').click()">Cancel</button>
+        </div>
+    </form>
+    <form style='display: none;' method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <button id="cancel" type="submit">Cancel</button>
+    </form>
+</div>
+
+{% else %}
+<div class="row">
+    <div class="col mt-5">
+        <div class="alert alert-danger" role="alert">
+            <h1>You are not the correct user to edit this page...</h1>
+        </div>
+    </div>
+    <div class="col">
+        <img src="/static/book/images/locked_book.svg" class="img-fluid" alt="Responsive image" title="locked book">
+    </div>
+</div>
+{% endif %} {% else %}
+<div class="row">
+    <div class="col mt-5">
+        <div class="alert alert-danger" role="alert">
+            <h1>You are not allowed here...</h1>
+        </div>
+    </div>
+    <div class="col">
+        <img src="/static/book/images/locked_book.svg" class="img-fluid" alt="Responsive image" title="locked book">
+    </div>
+</div> {% endif %} {% endblock %}

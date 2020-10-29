@@ -1,0 +1,29 @@
+{% extends 'book/base.html' %} {% block title %} Create A New Profile {% endblock %} {% block content %} {% if user.is_authenticated %}
+<div class="row">
+    <div class="alert alert-info" role="alert">
+        <h3 class="alert-heading">Create User Profile...</h3>
+    </div>
+</div>
+<br/>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            {% csrf_token %} {{ form.as_p }}
+            <button class="btn btn-info">Create Profile</button>
+            <button type="button" class="btn btn-outline-warning" onclick="$('#cancel').click()">Cancel</button>
+        </div>
+    </form>
+    <form style='display: none;' method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <button id="cancel" type="submit">Cancel</button>
+    </form>
+</div>
+</form>
+</div>
+
+
+{% else %}
+
+<h3>You are not allowed here!</h3>
+
+{% endif %} {% endblock %}

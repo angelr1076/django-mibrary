@@ -1,0 +1,22 @@
+{% extends 'book/base.html' %} {% block title %} Add Genre {% endblock %} {% block content %}
+<div class="row justify-content-center mt-5">
+ <div class="alert alert-success" role="alert">
+  <h3 class="alert-heading">Add Genre...</h3>
+ </div>
+</div>
+<div class="form-group mt-3">
+ {% if user.is_superuser %}
+ <form method="POST">
+  {% csrf_token %} {{ error }}
+  <div class="form-group">
+   <label for="name">Genre</label>
+   <input type="text" name="name" class="form-control" id="id_name" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+ </form>
+ {% else %}
+ <h3 class="mb-3">You must be a site admin to add a genre...</h3>
+ <button class="btn btn-info btn-lg"><a href="{% url 'home' %}" style="color:white;">Home</a></button>{% endif %}
+</div>
+
+{% endblock %}

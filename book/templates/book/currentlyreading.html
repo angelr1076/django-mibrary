@@ -1,0 +1,53 @@
+{% extends "book/base.html" %} {% load static %} { % block title % } Currently Reading { % endblock % } {% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="alert alert-info" role="alert">
+        <h3 class="alert-heading">Currently Reading List...</h3>
+    </div>
+</div>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-10">
+        {% if page_obj %}
+        <div class="container mt-1">
+            {% for book in page_obj %}
+            <div class="card-body">
+                {% if book.book_img %}
+                <img src="{{ book.book_img.url }}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% else %}
+                <img src="{% static 'book/images/logo.png' %}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% endif %}
+                <blockquote class="blockquote mt-3">
+                    <a href="{% url 'viewonly' book.id %}">
+                              <strong><p class="mb-0">{{ book.title|capfirst }}</p></strong>
+                          </a>
+                    <p class="mb-0">{% if book.summary %}{{ book.summary|truncatechars:80|safe }}{% endif %}</p>
+                </blockquote>
+                <footer class="blockquote-footer">by <cite title="Source Title">{{ book.author }}</cite></footer>
+                <small><p class="mb-0"><em>{{ book.user }}</em></p></small>
+            </div>
+            <hr class="alert-info"> {% endfor %}
+            <div class="pagination">
+                <span class="step-links mr-2">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current mr-2">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span> {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> {% endif %}
+                </span>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col mt-5">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">There are no books in your Currently Reading List...</h4>
+                </div>
+            </div>
+            <div class="col">
+                <img src="../../static/book/images/apple_book.svg" class="img-fluid" alt="Responsive image" title="apple on book"> {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

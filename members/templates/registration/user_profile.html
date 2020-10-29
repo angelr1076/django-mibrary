@@ -1,0 +1,35 @@
+{% extends 'book/base.html' %} {% load static %} {% block title %} User Profile {% endblock %} {% block content %} {% if user.is_authenticated %}
+<br/>
+<div class="jumbotron">
+  <div class="col-md-2">
+    {% if page_user.profile_pic %}
+    <img src="{{ page_user.profile_pic.url }}" class="img-thumbnail rounded float-right" alt="profile pic"> {% else %}
+    <img src="{% static 'book/images/default_profile.svg' %}" class="img-thumbnail rounded float-right" alt="alt profile pic"> {% endif %}
+  </div>
+  <h1 class="display-4">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h1>
+  <p class="small text-muted">
+    {% if page_user.website_url %} [
+    <a href="{{ page_user.website_url }}" target="_blank"> My Website </a> ]{% endif %}
+  </p>
+  <hr class="my-4">
+  <p class="card-text">{{ page_user.bio }}</p>
+  {% if user.id == page_user.user.id %}
+  <p class="lead">
+    <a class="btn btn-warning btn-lg" href="{% url 'edit_profile_page' user.profile.id %}" role="button">Edit Profile</a>
+  </p>
+  {% else %}
+  <small>You can view, but you cannot edit this page...</small> {% endif %} {% else %}
+  <div class="row">
+    <div class="col mt-5">
+      <div class="alert alert-danger" role="alert">
+        <h1>You must be logged in to view a user's profile.</h1>
+      </div>
+    </div>
+    <div class="col">
+      <img src="/static/book/images/lock-folder.svg" class="img-fluid" alt="Responsive image" title="locked book">
+    </div>
+  </div>
+</div>
+
+
+{% endif %} {% endblock %}

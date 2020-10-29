@@ -1,0 +1,66 @@
+{% extends "book/base.html" %} {% load static %} {% block title %} View Only {% endblock %} {% block content %}
+<div class="container mt-5">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+</div>
+<div class="container main">
+    <div class="container">
+        {% if book.book_img %}
+        <div class="form-group">
+            <img src="{{ book.book_img.url }}" alt="{{ book.title }}" class="img-fluid" style="height:250; width:200px"> {% else %}
+            <img src="{% static 'book/images/logo.png' %}" alt="{{ book.title }}" class="img-fluid" style="height:250; width:200px"> {% endif %}
+            <br/><br/>
+            <h1>{{ book.title }}</h1>
+        </div>
+        <hr class="alert-info">
+        <div class="container mt-4">
+            <p>Submitted By - <b><em>{% if book.user.profile.id %} <a href="{% url 'show_profile_page' book.user.profile.id %}">{{ book.user }}</a>{% else %} {{ book.user }} {% endif %}</em></b></p>
+            {% if book.author %}
+            <p>Author - {{ book.author }}</p>
+            {% endif %} {% if book.genre %}
+            <p>Genre - {{ book.genre }}</p>
+            {% endif %} {% if book.status %}
+            <p>Status - {{ book.status }}</p>
+            {% endif %} {% if book.summary %}
+            <p>Summary: {{ book.summary|safe }}</p>
+            {% endif %} {% if book.isbn %}
+            <p>ISBN: <b>{{ book.isbn }}</b></p>
+            {% endif %}
+        </div>
+        <p>
+            <div class="container">
+                {% if book.user.id == user.id %}
+                <p class="nav-link">
+                    <a class="btn btn-outline-danger btn-lg" href="{% url 'editbook' book.id %}" role="button">Edit Book Details</a>
+                </p>
+                {% endif %}
+            </div>
+    </div>
+    <br/>
+    <hr class="alert-info">
+    <div class="container">
+        <h3>Add a quick book review...</h3>
+        <form method="POST">
+            {% csrf_token %} {% if request.user.is_authenticated %} {{ review_form.as_p }}
+            <input type="submit" value="Submit Review" class="btn btn-outline-success"> {% else %}
+            <p>You must be logged in to add a review.</p>
+            {% endif %}
+        </form>
+        <div class="main-review-section mt-3">
+            <h5>{{ reviews.count }} Review{{ reviews|pluralize }}</h5>
+            {% for review in reviews %}
+            <div class="card mb-4" style="width: 40rem;">
+                <div class="card-body">
+                    <blockquote class="blockquote">
+                        <h6 class="mb-0">{{ review.content }}</h6>
+                    </blockquote>
+                    <footer class="blockquote-footer">by <cite title="Source Title">{{ review.user|capfirst }}</cite></footer>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
