@@ -9,19 +9,19 @@ Mibrary allows users to register, login, create/edit a profile page, create/edit
 
 The app also uses static content for a minimal amount of image along with all user uploaded images being saved and loaded from Cloudinary for storage. 
 
-####Login
+#### Login
 ![Login page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/loginpage.png)
-####Register
+#### Register
 ![Registration page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/register.png)
-####Home Page
+#### Home Page
 ![Home page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/homepage.png)
-####Add Books
+#### Add Books
 ![Add books page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/nobooks.png)
-####No Books Added
+#### No Books Added
 ![No books](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/wanttoread.png)
-####Edit Books
+#### Edit Books
 ![Create book](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973491/Mibrary%20Images/createbook.png)
-####Profile Page
+#### Profile Page
 ![Profile page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/profile.png)
-####Add Reviews
+#### Add Reviews
 ![Reviews](https://res.cloudinary.com/angelrodriguez/image/upload/v1603990043/Mibrary%20Images/reviews.png)
