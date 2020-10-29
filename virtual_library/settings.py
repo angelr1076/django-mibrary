@@ -149,9 +149,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # For static images
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 LOGIN_REDIRECT_URL = 'loginuser'
 LOGOUT_REDIRECT_URL = 'loginuser'
