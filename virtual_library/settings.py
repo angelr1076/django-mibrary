@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 import environ
 from django.contrib.messages import constants as messages
 
@@ -156,3 +157,5 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'loginuser'
 LOGOUT_REDIRECT_URL = 'loginuser'
+
+django_heroku.settings(locals())
