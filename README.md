@@ -15,11 +15,11 @@ The app also uses static content for a minimal amount of image along with all us
 ![Registration page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/register.png)
 #### Home Page
 ![Home page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/homepage.png)
-#### Add Books
-![Add books page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/nobooks.png)
+#### Book Lists by Status
+![Book Lists page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/nobooks.png)
 #### No Books Added
 ![No books](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/wanttoread.png)
-#### Edit Books
+#### Add/Edit Books
 ![Create book](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973491/Mibrary%20Images/createbook.png)
 #### Profile Page
 ![Profile page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/profile.png)
