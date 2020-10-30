@@ -1,5 +1,6 @@
 # django-mibrary
 ### CS50 - final project
+#### Live site and YouTube description coming soon...
 
 Django Mibrary is my final assignment/project to complete CS50X. This project is a culmination of the final few projects from the web track. 
 
