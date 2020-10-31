@@ -11,7 +11,7 @@
         {% if book.book_img %}
         <div class="form-group">
             <img src="{{ book.book_img.url }}" alt="{{ book.title }}" class="img-fluid" style="height:250; width:200px"> {% else %}
-            <img src="{% static 'book/images/logo.png' %}" alt="{{ book.title }}" class="img-fluid" style="height:250; width:200px"> {% endif %}
+            <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1604093628/book_cover.png" alt="book cover" title="generic book" class="img-fluid" style="height:250; width:200px"> {% endif %}
             <br/><br/>
             <h1>{{ book.title }}</h1>
         </div>
@@ -20,8 +20,6 @@
             <p>Submitted By - <b><em>{% if book.user.profile.id %} <a href="{% url 'show_profile_page' book.user.profile.id %}">{{ book.user }}</a>{% else %} {{ book.user }} {% endif %}</em></b></p>
             {% if book.author %}
             <p>Author - {{ book.author }}</p>
-            {% endif %} {% if book.genre %}
-            <p>Genre - {{ book.genre }}</p>
             {% endif %} {% if book.status %}
             <p>Status - {{ book.status }}</p>
             {% endif %} {% if book.summary %}

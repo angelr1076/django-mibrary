@@ -11,6 +11,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 # Auth functions
@@ -71,10 +72,12 @@ class CreateProfilePageView(CreateView):
         return super().form_valid(form)
 
 
-class EditProfilePageView(UpdateView):
+class EditProfilePageView(SuccessMessageMixin, UpdateView):
     model = Profile
     form_class = EditProfilePageForm
     template_name = 'registration/edit_profile_page.html'
+
+    success_message = "Profile updated."
     success_url = reverse_lazy('home')
 
 
@@ -86,7 +89,6 @@ class ShowProfilePageView(DetailView):
         context = super(ShowProfilePageView,
                         self).get_context_data(*args, **kwargs)
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-        print(page_user)
         context["page_user"] = page_user
         print(f'Context: {context}')
         return context
@@ -94,9 +96,10 @@ class ShowProfilePageView(DetailView):
 # User settings
 
 
-class UserEditView(generic.UpdateView):
+class UserEditView(SuccessMessageMixin, generic.UpdateView):
     form_class = EditSettingsForm
     template_name = 'registration/edit_settings.html'
+    success_message = "Settings updated."
     success_url = reverse_lazy('home')
 
     def get_object(self):

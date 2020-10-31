@@ -15,7 +15,7 @@ for item in book_read:
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = ('author', 'title', 'genre', 'status',
+        fields = ('author', 'title', 'status',
                   'book_img', 'summary', 'isbn')
         ordering = ['-id']
         labels = {'book_img': ('Book Cover'), 'isbn': ('ISBN')}

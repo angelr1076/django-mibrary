@@ -12,7 +12,7 @@
             <div class="card-body">
                 {% if book.book_img %}
                 <img src="{{ book.book_img.url }}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% else %}
-                <img src="{% static 'book/images/logo.png' %}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% endif %}
+                <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1604093628/book_cover.png" alt="book cover" title="generic book" class="img-fluid" style="height:150px; width:100px"> {% endif %}
                 <blockquote class="blockquote mt-3">
                     <a href="{% url 'viewonly' book.id %}">
                               <strong><p class="mb-0">{{ book.title|capfirst }}</p></strong>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col">
-                <img src="../../static/book/images/book_lover.svg" class="img-fluid" alt="Responsive image" title="book lover"> {% endif %}
+                <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933165/book_lover.svg" class="img-fluid" alt="Responsive image" title="book lover"> {% endif %}
             </div>
         </div>
     </div>

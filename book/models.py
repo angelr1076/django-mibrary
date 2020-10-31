@@ -4,15 +4,6 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 
 
-# class Genre(models.Model):
-#     name = models.CharField(max_length=100)
-
-#     def get_absolute_url(self):
-#         return reverse('home')
-
-#     def __str__(self):
-#         return f'{self.name}'
-
 class Book(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
@@ -20,8 +11,6 @@ class Book(models.Model):
         null=True, blank=True, upload_to="images/book/")
     summary = RichTextField(blank=True, null=True)
     isbn = models.CharField(blank=True, null=True, max_length=25)
-    genre = models.CharField(blank=True, null=True,
-                             max_length=100, default='Fiction')
     status = models.CharField(blank=True, null=True,
                               max_length=100, default='Want to read')
     created = models.DateTimeField(auto_now_add=True)

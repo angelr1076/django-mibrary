@@ -11,7 +11,7 @@
             <div class="card-body">
                 {% if book.book_img %}
                 <img src="{{ book.book_img.url }}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% else %}
-                <img src="{% static 'book/images/logo.png' %}" alt="{{ book.title }}" class="img-fluid" style="height:150px; width:100px"> {% endif %}
+                <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1604093628/book_cover.png" alt="book cover" title="generic book" class="img-fluid" style="height:150px; width:100px"> {% endif %}
                 <blockquote class="blockquote mt-3">
                     <a href="{% url 'viewonly' book.id %}">
                               <strong><p class="mb-0">{{ book.title|capfirst }}</p></strong>
@@ -40,7 +40,7 @@
         {% endif %} {% else %}
         <div class="row">
             <div class="col">
-                <img src="../../static/book/images/mibrary_logo.svg" class="img-fluid" alt="Responsive image" title="main logo">
+                <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933167/mibrary_logo.svg" class="img-fluid" alt="Responsive image" title="main logo">
                 <a role="button" class="btn btn-info btn-lg mt-3" href="{% url 'createbook' %}">Add book</a>
             </div>
             <div class="col mt-5">
@@ -48,7 +48,7 @@
                     <h3 class="alert-heading">You haven't added any books, yet.</h3>
                 </div>
                 <br/>
-                <img src="../static/book/images/reading-list.svg" class="img-fluid mt-3" style="width:400px;" alt="Responsive image" title="stack of books">
+                <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933167/reading-list.svg" class="img-fluid mt-3" style="width:400px;" alt="Responsive image" title="stack of books">
             </div>
         </div>
     </div>

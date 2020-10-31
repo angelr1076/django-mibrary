@@ -4,12 +4,12 @@
   <div class="col-md-2">
     {% if page_user.profile_pic %}
     <img src="{{ page_user.profile_pic.url }}" class="img-thumbnail rounded float-right" alt="profile pic"> {% else %}
-    <img src="{% static 'book/images/default_profile.svg' %}" class="img-thumbnail rounded float-right" alt="alt profile pic"> {% endif %}
+    <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933165/default_profile.svg" class="img-thumbnail rounded float-right" alt="alt profile pic"> {% endif %}
   </div>
   <h1 class="display-4">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h1>
   <p class="small text-muted">
-    {% if page_user.website_url %} [
-    <a href="{{ page_user.website_url }}" target="_blank"> My Website </a> ]{% endif %}
+    {% if page_user.website_url %} 
+    <a href="https://{{ page_user.website_url }}" target="_blank">[My Website]</a> {% endif %}
   </p>
   <hr class="my-4">
   <p class="card-text">{{ page_user.bio }}</p>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="col">
-      <img src="/static/book/images/lock-folder.svg" class="img-fluid" alt="Responsive image" title="locked book">
+      <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933165/lock-folder.svg" class="img-fluid" alt="Responsive image" title="locked book">
     </div>
   </div>
 </div>
