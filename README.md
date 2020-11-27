@@ -10,8 +10,7 @@ Mibrary allows users to register, login, create/edit a profile page, create/edit
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage. 
 
 #### Video submission
-![YouTube](#### Login
-![Login page](https://www.youtube.com/watch?v=pUkKkPVrXMQ)
+[YouTube Submission](https://www.youtube.com/watch?v=pUkKkPVrXMQ)
 
 
 #### Login
