@@ -7,7 +7,12 @@ I decided to take several months to learn Django after some frustration with Fla
 
 Mibrary allows users to register, login, create/edit a profile page, create/edit user settings and create/edit books as well as viewing other users profiles, books and leaving reviews for other user books.
 
-The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for storage. 
+The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage. 
+
+#### Video submission
+![YouTube](#### Login
+![Login page](https://www.youtube.com/watch?v=pUkKkPVrXMQ)
+
 
 #### Login
 ![Login page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/loginpage.png)
