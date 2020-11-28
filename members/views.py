@@ -26,6 +26,7 @@ def signupuser(request):
                 user.save()
                 login(request, user)
                 return redirect('currentbooks')
+                messages.success(request, 'Registered successfully.')
             except IntegrityError:
                 messages.error(request, 'User already exists.')
                 return render(request, 'registration/signupuser.html', {'form': UserCreationForm()})

@@ -1,27 +1,43 @@
 # django-mibrary
+
 ### CS50 - final project
 
-Django Mibrary is my final assignment/project to complete CS50X. This project is a culmination of the final few projects from the web track. 
+Django Mibrary is my final assignment/project to complete CS50.
 
-I decided to take several months to learn Django after some frustration with Flask and some of its limitations. I made the decision to extend the amount of time it would take me to complete the course in order to learn another new technology during the class. It's something the professor and his assistants encouraged as we jumped from language to language by learning to pick up patterns a lot more quickly.
+Mibrary allows users to register, login, create a user profile, view/edit user settings and update their password. The app also allows users to create and edit books as well as viewing other user profiles, books and leaving reviews of their own or other user's books. Mibrary uses function based views as well as class based views and uses the built in message system in conjunction with Bootstrap's message alerts. The app uses some custom forms, as well as class mixins and decorators for page security.
 
-Mibrary allows users to register, login, create/edit a profile page, create/edit user settings and create/edit books as well as viewing other users profiles, books and leaving reviews for other user books.
+The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary SDK for storage. Mibrary gives users the ability to create book summaries with rich text using ckeditor.
 
-The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for storage. 
+I'm proud that, while creating this project, I was also able to learn Django as well. I know that hosting was not a requirement for the final project, but I wanted to learn how to host a Django project as well as transition from the standard sqlite3 database to Heroku's free-tiered Postgresql db.
 
 #### Login
+
 ![Login page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/loginpage.png)
+
 #### Register
+
 ![Registration page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/register.png)
+
 #### Home Page
+
 ![Home page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/homepage.png)
+
 #### Book Lists by Status
+
 ![Book Lists page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973486/Mibrary%20Images/nobooks.png)
+
 #### No Books Added
+
 ![No books](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/wanttoread.png)
+
 #### Add/Edit Books
+
 ![Create book](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973491/Mibrary%20Images/createbook.png)
+
 #### Profile Page
+
 ![Profile page](https://res.cloudinary.com/angelrodriguez/image/upload/v1603973490/Mibrary%20Images/profile.png)
+
 #### Add Reviews
+
 ![Reviews](https://res.cloudinary.com/angelrodriguez/image/upload/v1603990043/Mibrary%20Images/reviews.png)
