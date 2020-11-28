@@ -8,7 +8,9 @@ Mibrary allows users to register, login, create a user profile, view/edit user s
 
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary SDK for storage. Mibrary gives users the ability to create book summaries with rich text using ckeditor.
 
-I'm proud that, while creating this project, I was also able to learn Django as well. I know that hosting was not a requirement for the final project, but I wanted to learn how to host a Django project as well as transition from the standard sqlite3 database to Heroku's free-tiered Postgresql db.
+The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage.
+
+[YouTube Submission](https://www.youtube.com/watch?v=pUkKkPVrXMQ)
 
 #### Login
 
