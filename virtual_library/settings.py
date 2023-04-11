@@ -46,7 +46,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 # DEBUG = 'True'
-
+# Test
 
 ALLOWED_HOSTS = ["*"]
 
