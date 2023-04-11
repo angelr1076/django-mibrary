@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 
-
 class Book(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
@@ -11,8 +10,7 @@ class Book(models.Model):
         null=True, blank=True, upload_to="images/book/")
     summary = RichTextField(blank=True, null=True)
     isbn = models.CharField(blank=True, null=True, max_length=25)
-    status = models.CharField(blank=True, null=True,
-                              max_length=100, default='Want to read')
+    status = models.CharField(blank=True, null=True, max_length=100, default='Want to read')
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

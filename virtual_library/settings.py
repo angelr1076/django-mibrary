@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+# import django_heroku
 import environ
 from django.contrib.messages import constants as messages
 
@@ -43,7 +43,7 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # DEBUG = 'True'
 
 
-ALLOWED_HOSTS = ["mibrary-library.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -142,11 +142,13 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'YOUR STATIC FILE FOLDERS')]
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # For images in ckeditor
@@ -160,4 +162,4 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'loginuser'
 LOGOUT_REDIRECT_URL = 'loginuser'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

@@ -15,7 +15,7 @@ from django.contrib import messages
 
 # Home
 def home(request):
-    book_list = Book.objects.all()
+    book_list = Book.objects.all().order_by('title')
     paginator = Paginator(book_list, 2)
 
     page_number = request.GET.get('page')
