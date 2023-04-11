@@ -42,8 +42,8 @@ if os.environ.get('DJANGO_ENV') == 'local':
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+# DEBUG = True
 
 # DEBUG = 'True'
 
@@ -126,9 +126,6 @@ DATABASES = {
         'PORT': PGPORT,
     }
 }
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
