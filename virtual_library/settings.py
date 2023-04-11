@@ -96,10 +96,11 @@ WSGI_APPLICATION = 'virtual_library.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
+#         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
 #     }
 # }
+
 
 DATABASE_URL = env("DATABASE_URL")
 PGDATABASE = env("PGDATABASE")
@@ -109,15 +110,15 @@ PGHOST = env("PGHOST")
 PGPORT = env("PGPORT")
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'DATABASE_URL',
-        'NAME': 'PGDATABASE',
-        'USER': 'PGUSER',
-        'PASSWORD': 'PGPASSWORD',
-        'HOST': 'PGHOST',
-        'PORT': PGPORT,
-    }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'DATABASE_URL',
+        'NAME': 'PGDATABASE',
+        'USER': 'PGUSER',
+        'PASSWORD': 'PGPASSWORD',
+        'HOST': 'PGHOST',
+        'PORT': PGPORT,
+    }
 }
 
 
