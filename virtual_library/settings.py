@@ -114,17 +114,19 @@ PGPASSWORD = env("PGPASSWORD")
 PGHOST = env("PGHOST")
 PGPORT = env("PGPORT")
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'DATABASE_URL',
-        'NAME': 'PGDATABASE',
-        'USER': 'PGUSER',
-        'PASSWORD': 'PGPASSWORD',
-        'HOST': 'PGHOST',
+        'URL': DATABASE_URL,
+        'NAME': PGDATABASE,
+        'USER': PGUSER,
+        'PASSWORD': PGPASSWORD,
+        'HOST': PGHOST,
         'PORT': PGPORT,
     }
 }
+
 
 
 
