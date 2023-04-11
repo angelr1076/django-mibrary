@@ -30,7 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
 # Read the env file
-environ.Env.read_env()
+# Check if DJANGO_ENV is set to 'local'
+if os.environ.get('DJANGO_ENV') == 'local':
+    # Read the env file
+    environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
