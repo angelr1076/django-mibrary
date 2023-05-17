@@ -14,12 +14,12 @@ The app also uses static content for a minimal amount of images along with all u
 
 To clone the repository and run the project:
 
-Open your terminal.
-Navigate to the directory where you want to clone the repository.
-Run the following command: `git clone https://github.com/angelr1076/django-mibrary.git`
-Navigate to the cloned directory: `cd django-mibrary`
-Install the required dependencies: `pip install -r requirements.txt`
-Run the server: `python manage.py runserver`
+### Open your terminal.
+- Navigate to the directory where you want to clone the repository.
+- Run the following command: `git clone https://github.com/angelr1076/django-mibrary.git`
+- Navigate to the cloned directory: `cd django-mibrary`
+- Install the required dependencies: `pip install -r requirements.txt`
+- Run the server: `python manage.py runserver`
 
 [YouTube Submission](https://www.youtube.com/watch?v=pUkKkPVrXMQ)
 
