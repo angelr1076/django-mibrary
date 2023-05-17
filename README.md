@@ -12,9 +12,9 @@ The app also uses static content for a minimal amount of images along with all u
 
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage.
 
-To clone the repository and run the project:
+### To clone the repository and run the project:
 
-### Open your terminal.
+- Open your terminal.
 - Navigate to the directory where you want to clone the repository.
 - Run the following command: `git clone https://github.com/angelr1076/django-mibrary.git`
 - Navigate to the cloned directory: `cd django-mibrary`
