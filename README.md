@@ -12,6 +12,8 @@ The app also uses static content for a minimal amount of images along with all u
 
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage.
 
+Hosted by: Railway
+
 ### To clone the repository and run the project:
 
 - Open your terminal.
