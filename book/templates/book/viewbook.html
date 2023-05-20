@@ -10,7 +10,7 @@
 <div class="form-group mt-3">
     <form method="POST">
         {% csrf_token %} {{ form.as_p }}
-    </form <form style='display: none;' method="POST" action="{% url 'deletebook' book.id %}">
+    </form style='display: none;' method="POST" action="{% url 'deletebook' book.id %}">
     {% csrf_token %}
     <button id="delete" type="submit">Delete</button>
     </form>
