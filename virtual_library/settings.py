@@ -34,6 +34,17 @@ env = environ.Env()
 if os.environ.get('DJANGO_ENV') == 'local':
     # Read the env file
     environ.Env.read_env()
+# Print DEBUG information
+print("DEBUG: Reading environment variables...")
+environ.Env.read_env()
+print(f"DEBUG: SECRET_KEY={env('SECRET_KEY')}")
+
+# ... (rest of your settings)
+
+# For DEBUG purposes only, print the whole environment
+print("DEBUG: Entire Environment Variables:")
+for k, v in os.environ.items():
+    print(f"    {k}={v}")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -45,7 +56,6 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # DEBUG = True
 
-# DEBUG = 'True'
 # Test
 
 ALLOWED_HOSTS = ["*"]
