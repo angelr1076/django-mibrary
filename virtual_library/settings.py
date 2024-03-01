@@ -118,7 +118,6 @@ PGPORT = env("PGPORT")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': DATABASE_URL,
         'NAME': PGDATABASE,
         'USER': PGUSER,
         'PASSWORD': PGPASSWORD,
@@ -126,6 +125,7 @@ DATABASES = {
         'PORT': PGPORT,
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -171,7 +171,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
