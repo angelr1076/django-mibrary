@@ -35,7 +35,6 @@ if os.environ.get('DJANGO_ENV') == 'local':
     # Read the env file
     environ.Env.read_env()
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -46,6 +45,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # DEBUG = True
 
+# DEBUG = 'True'
 # Test
 
 ALLOWED_HOSTS = ["*"]
@@ -118,6 +118,7 @@ PGPORT = env("PGPORT")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'URL': DATABASE_URL,
         'NAME': PGDATABASE,
         'USER': PGUSER,
         'PASSWORD': PGPASSWORD,
@@ -125,7 +126,6 @@ DATABASES = {
         'PORT': PGPORT,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -171,7 +171,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'YOUR STATIC FILE FOLDERS')]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
