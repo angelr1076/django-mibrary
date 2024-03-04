@@ -30,13 +30,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# Read the env file
-# Check if DJANGO_ENV is set to 'local'
-# if os.environ.get('DJANGO_ENV') == 'local':
-#     # Read the env file
-#     environ.Env.read_env()
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -48,11 +41,9 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # DEBUG = True
 
 # Test
-
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -181,12 +172,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # For images in ckeditor
 MEDIA_URL = '/media/'
 
-# For static images
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-
 LOGIN_REDIRECT_URL = 'loginuser'
 LOGOUT_REDIRECT_URL = 'loginuser'
-
-# django_heroku.settings(locals())
