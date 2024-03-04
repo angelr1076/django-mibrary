@@ -10,9 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 import os
-# import django_heroku
+from pathlib import Path
 import environ
 from django.contrib.messages import constants as messages
 
@@ -29,11 +28,14 @@ MESSAGE_TAGS = {
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # Read the env file
 # Check if DJANGO_ENV is set to 'local'
-if os.environ.get('DJANGO_ENV') == 'local':
-    # Read the env file
-    environ.Env.read_env()
+# if os.environ.get('DJANGO_ENV') == 'local':
+#     # Read the env file
+#     environ.Env.read_env()
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -45,7 +47,6 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # DEBUG = True
 
-# DEBUG = 'True'
 # Test
 
 ALLOWED_HOSTS = ["*"]
@@ -99,10 +100,11 @@ WSGI_APPLICATION = 'virtual_library.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# For testing
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
 
@@ -171,7 +173,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'YOUR STATIC FILE FOLDERS')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
