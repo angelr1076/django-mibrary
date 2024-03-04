@@ -2,7 +2,7 @@
 
 ### CS50 - final project
 
-[View Mibrary](https://django-mibrary.up.railway.app/)
+[View Mibrary](https://mibrary.up.railway.app/)
 
 Django Mibrary is my final assignment/project to complete CS50.
 
