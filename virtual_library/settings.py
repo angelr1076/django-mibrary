@@ -43,6 +43,7 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 # Test
 # ALLOWED_HOSTS = ["*"]
 ALLOWED_HOSTS = ['mibrary.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://mibrary.up.railway.app']
 
 # Application definition
 INSTALLED_APPS = [
