@@ -18,3 +18,9 @@ body {
   justify-content: center;
   bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .responsive-row {
+    flex-direction: column !important;
+  }
+}

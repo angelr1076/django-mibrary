@@ -1,10 +1,10 @@
 {% extends 'book/base.html' %} {% load static %} {% block title %} User Profile {% endblock %} {% block content %} {% if user.is_authenticated %}
 <br/>
-<div class="jumbotron">
+<div class="jumbotron d-flex flex-column align-items-center">
   <div class="col-md-2">
     {% if page_user.profile_pic %}
-    <img src="{{ page_user.profile_pic.url }}" class="img-thumbnail rounded float-right" alt="profile pic"> {% else %}
-    <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933165/default_profile.svg" class="img-thumbnail rounded float-right" alt="alt profile pic"> {% endif %}
+    <img src="{{ page_user.profile_pic.url }}" class="img-fluid rounded float-right" alt="profile pic"> {% else %}
+    <img src="https://res.cloudinary.com/angelrodriguez/image/upload/v1603933165/default_profile.svg" class="img-fluid rounded float-right" alt="alt profile pic"> {% endif %}
   </div>
   <h1 class="display-4">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h1>
   <p class="small text-muted">
@@ -15,7 +15,7 @@
   <p class="card-text">{{ page_user.bio }}</p>
   {% if user.id == page_user.user.id %}
   <p class="lead">
-    <a class="btn btn-warning btn-lg" href="{% url 'edit_profile_page' user.profile.id %}" role="button">Edit Profile</a>
+    <a class="btn btn-warning btn-md" href="{% url 'edit_profile_page' user.profile.id %}" role="button">Edit Profile</a>
   </p>
   {% else %}
   <small>You can view, but you cannot edit this page...</small> {% endif %} {% else %}
