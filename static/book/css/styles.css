@@ -19,6 +19,11 @@ body {
   bottom: 0;
 }
 
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
 @media (max-width: 768px) {
   .responsive-row {
     flex-direction: column !important;
