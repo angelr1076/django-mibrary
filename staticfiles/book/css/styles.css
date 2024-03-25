@@ -24,8 +24,15 @@ body {
     flex-direction: column !important;
   }
 
-  .row {
+  .container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .col-md-10 {
     margin-right: 0 !important;
     margin-left: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }

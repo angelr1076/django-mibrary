@@ -1,12 +1,12 @@
 {% extends "book/base.html" %} {% load static %} { % block title % } Your Books { % endblock % } {% block content %} {% if page_obj %}
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-5 mr-2 ml-2">
     <div class="alert alert-info" role="alert">
         <h3 class="alert-heading">{% if book_list %} {{ book_list.count }} total book{{ book_list.count|pluralize }} in your Mibrary...</h3>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
-    <div class="col-md-10">
-        <div class="container mt-1">
+    <div class="col-md-10 p-0">
+        <div class="container mt-1 p-0">
             {% for book in page_obj %}
             <div class="card-body">
                 {% if book.book_img %}
