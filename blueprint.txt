@@ -1,0 +1,19 @@
+Rehosted on railway and added new superuser. 
+URL: https://mibrary.up.railway.app/
+
+To test:
+
+To enter an env, type in `source <env folder name>/bin/activate`
+
+Comment out this line
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+Then uncomment this line
+DEBUG = True
+
+Add the '*' to allowed hosts array
+ALLOWED_HOSTS = ['cct.up.railway.app', '*']
+
+To update styling, go to `library_project/book/templates/book` or static/book/styles path to update styles
+Run `python manage.py collectstatic` before pushing to github.
+
+*** Before PUSHING BACK TO PRODUCTION, DON'T FORGET TO UNDO THE DEBUG AND ALLOWED HOST CHANGES ABOVE
