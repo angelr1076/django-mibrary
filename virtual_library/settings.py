@@ -30,25 +30,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 # Read the env file
 # Check if DJANGO_ENV is set to 'local'
-if os.environ.get("DJANGO_ENV") == "local":
-    # Read the env file
-    environ.Env.read_env()
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
-
+SECRET_KEY = env("SECRET_KEY", default="django-insecure-collectstatic-only")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG_VALUE") == "True"
-# DEBUG = True
+
 
 # Test
 ALLOWED_HOSTS = [
     "mibrary.online",
     "www.mibrary.online",
     "xzgdf1s7.up.railway.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://mibrary.online",
+    "https://www.mibrary.online",
+    "https://xzgdf1s7.up.railway.app",
 ]
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
