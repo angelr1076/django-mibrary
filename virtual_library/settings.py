@@ -46,13 +46,13 @@ DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 ALLOWED_HOSTS = [
     "mibrary.online",
     "www.mibrary.online",
-    "xzgdf1s7.up.railway.app",
+    "mibrary.up.railway.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://mibrary.online",
     "https://www.mibrary.online",
-    "https://xzgdf1s7.up.railway.app",
+    "https://mibrary.up.railway.app",
 ]
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
