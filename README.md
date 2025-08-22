@@ -2,7 +2,7 @@
 
 ### CS50 - final project
 
-[View Mibrary](https://mibrary.up.railway.app/)
+[View Mibrary](https://mibrary.online)
 
 Django Mibrary is my final assignment/project to complete CS50.
 
@@ -11,8 +11,6 @@ Mibrary allows users to register, login, create a user profile, view/edit user s
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary SDK for storage. Mibrary gives users the ability to create book summaries with rich text using ckeditor.
 
 The app also uses static content for a minimal amount of images along with all user uploaded images being saved and loaded from Cloudinary for offsite storage.
-
-Hosted by: Railway
 
 ### To clone the repository and run the project:
 
