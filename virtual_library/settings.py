@@ -43,19 +43,16 @@ DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 
 
 # Test
-ALLOWED_HOSTS = [
-    "mibrary.online",
-    "www.mibrary.online",
-    "mibrary.up.railway.app",
-]
+ALLOWED_HOSTS = ["mibrary.online", "www.mibrary.online"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://mibrary.online",
-    "https://www.mibrary.online",
-    "https://mibrary.up.railway.app",
-]
+CSRF_TRUSTED_ORIGINS = ["https://mibrary.online", "https://www.mibrary.online"]
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+USE_X_FORWARDED_HOST = True
 
 # Application definition
 INSTALLED_APPS = [
