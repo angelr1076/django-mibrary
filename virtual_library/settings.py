@@ -41,8 +41,6 @@ SECRET_KEY = env("SECRET_KEY", default="django-insecure-collectstatic-only")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 
-
-# Test
 ALLOWED_HOSTS = ["mibrary.online", "www.mibrary.online"]
 
 CSRF_TRUSTED_ORIGINS = ["https://mibrary.online", "https://www.mibrary.online"]
